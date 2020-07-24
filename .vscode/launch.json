@@ -1,0 +1,32 @@
+{
+    // For more information, go to: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "cpp - Generate and debug the current file",
+            "type": "cppdbg",
+            "request": "launch",
+            // This task is executed before the "program" is launched.
+            // It is defined in tasks.json.
+            "preLaunchTask": "Generate executable",
+            // This file is executed when F5 is pressed.
+            // It's the executable generated and compiled by CMake (during the preLaunchTask).
+            "program": "${fileDirname}/build/bin/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "pretty-print for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // Installed when the container was built
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
