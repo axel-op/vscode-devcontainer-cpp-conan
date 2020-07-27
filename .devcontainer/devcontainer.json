@@ -18,11 +18,11 @@
 		"ms-vscode.cpptools", // C++
 		"matepek.vscode-catch2-test-adapter", // Test explorer
 		"ms-vscode.cmake-tools" // CMake extension
-	]
+	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "gcc -v",
+	"postCreateCommand": "conan profile update settings.compiler.libcxx=libstdc++11 default",
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
 }
